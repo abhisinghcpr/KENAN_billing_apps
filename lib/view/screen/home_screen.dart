@@ -1,5 +1,6 @@
 
 import 'package:flutter/material.dart';
+import 'package:flutter_tasks/view/screen/view_screen.dart';
 import 'package:provider/provider.dart';
 import '../../controller/bill_provider.dart';
 import 'create_screen.dart';
@@ -47,10 +48,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                   trailing: Icon(Icons.arrow_forward_ios, color: Colors.grey),
                   onTap: () {
+
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => DashboardScreen(bill: bill),
+                        builder: (_) => ViewBillScreen(bill: bill),
                       ),
                     );
                   },

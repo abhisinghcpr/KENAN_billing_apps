@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../../controller/bill_provider.dart';
 import '../../model/bill_model.dart';
+import 'dashboard_screen.dart';
 
 class ViewBillScreen extends StatefulWidget {
   final Bill bill;
@@ -56,6 +57,17 @@ class _ViewBillScreenState extends State<ViewBillScreen> {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
         actions: [
+          IconButton(
+            icon: Icon(Icons.picture_as_pdf, color: Colors.blue),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => DashboardScreen(bill: widget.bill),
+                ),
+              );
+            },
+          ),
           IconButton(
             icon: Icon(Icons.edit, color: Colors.blue),
             onPressed: () {
@@ -197,9 +209,10 @@ class _ViewBillScreenState extends State<ViewBillScreen> {
   void _openUpdateBottomSheet() {
     showModalBottomSheet(
       context: context,
+      isScrollControlled: true,  // Ensures the bottom sheet height adjusts dynamically
       builder: (context) {
         return Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(20.0),
           child: SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -217,12 +230,26 @@ class _ViewBillScreenState extends State<ViewBillScreen> {
                   controller: _customerContactController,
                   decoration: InputDecoration(hintText: 'Enter customer contact'),
                 ),
+                SizedBox(height: 20),
+
+                // Wrap the entire content with a Column and then add dynamic fields if necessary
+                ...List.generate(widget.bill.items.length, (index) {
+                  return Padding(
+                    padding: const EdgeInsets.only(bottom: 8.0),
+                    child: TextField(
+                      controller: _itemControllers[index], // Edit each item
+                      decoration: InputDecoration(hintText: 'Enter product name'),
+                    ),
+                  );
+                }),
 
                 SizedBox(height: 20),
                 Center(
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      foregroundColor: Colors.white, backgroundColor: Colors.blueAccent, padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.blueAccent,
+                      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
