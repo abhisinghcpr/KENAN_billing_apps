@@ -2,15 +2,28 @@
 
 A new Flutter project.
 
-## Getting Started
+Usage Instructions:
+Home Screen:
 
-This project is a starting point for a Flutter application.
+View a list of previously created bills.
+Tap the "Create New Bill" button to add a new bill.
+Create Bill Screen:
 
-A few resources to get you started if this is your first Flutter project:
+Enter customer details (Name, Contact Number).
+Add items to the bill by providing the item name, quantity, and unit price.
+The total amount will be automatically calculated.
+Save the bill to the list.
+View Bill Screen:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+View all details of a bill, including items and total amount.
+Mark the bill as paid or unpaid using the toggle.
+Optional Bonus Features:
+Use the "Filter Bills" option to search bills by date or status.
+Access the "Dashboard" for statistics about total sales and unpaid bills.
+Export all bills to a CSV file by clicking the export button.
+Technologies Used:
+Flutter (Dart)
+provider for state management
+SQLite for data persistence (optional)
+bluetooth_print_plus/pdf for print functionality (optional)
+Contributing:
