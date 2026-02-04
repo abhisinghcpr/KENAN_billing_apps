@@ -1,29 +1,64 @@
-# flutter_tasks
+# 🧾 Billing / Task Management App – Flutter
 
-A new Flutter project.
+A Flutter-based **Billing & Task Management Application** developed to demonstrate
+local data persistence, clean UI, and state management in Flutter.
 
-Usage Instructions:
-Home Screen:
+---
 
-View a list of previously created bills.
-Tap the "Create New Bill" button to add a new bill.
-Create Bill Screen:
+## 👨‍💻 Developer
+**Abhishek Singh – Flutter Developer** 🇮🇳  
 
-Enter customer details (Name, Contact Number).
-Add items to the bill by providing the item name, quantity, and unit price.
-The total amount will be automatically calculated.
-Save the bill to the list.
-View Bill Screen:
+🌐 **Portfolio:**  
+👉 https://abhisinghcpr.github.io  
 
-View all details of a bill, including items and total amount.
-Mark the bill as paid or unpaid using the toggle.
-Optional Bonus Features:
-Use the "Filter Bills" option to search bills by date or status.
-Access the "Dashboard" for statistics about total sales and unpaid bills.
-Export all bills to a CSV file by clicking the export button.
-Technologies Used:
-Flutter (Dart)
-provider for state management
-SQLite for data persistence (optional)
-bluetooth_print_plus/pdf for print functionality (optional)
-Contributing:
+💻 **GitHub:**  
+👉 https://github.com/abhisinghcpr  
+
+---
+
+## 📌 Overview
+This application allows users to create, manage, and track customer bills.
+It supports bill creation, payment status tracking, and optional analytics
+features for better business insights.
+
+---
+
+## 🏠 Home Screen
+- View a list of previously created bills
+- See bill total and payment status
+- Tap **Create New Bill** to add a new bill
+
+---
+
+## ➕ Create Bill Screen
+- Enter customer details (Name, Contact Number)
+- Add bill items (Item Name, Quantity, Unit Price)
+- Automatic total amount calculation
+- Save bill locally
+
+---
+
+## 📄 View Bill Screen
+- View complete bill details
+- Item-wise pricing & total amount
+- Toggle bill status (Paid / Unpaid)
+
+---
+
+## ⭐ Optional Bonus Features
+- Filter bills by **date** or **payment status**
+- Dashboard with **total sales** & **unpaid bills**
+- Export bills to **CSV / PDF**
+- Print bills using **Bluetooth printer**
+
+---
+
+## 🛠 Tech Stack
+- **Flutter (Dart)**
+- **Provider** – State Management
+- **SQLite** – Local Data Persistence
+- **bluetooth_print_plus / pdf** – Printing & Export (Optional)
+
+---
+
+## 📂 Project Structure
